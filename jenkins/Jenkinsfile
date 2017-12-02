@@ -6,9 +6,8 @@ pipeline {
         stage('build') {
             steps {
                git url: 'https://github.com/vekatkriish/javaenv.git'
-                sh "cd javaenv"
-                sh "mvn clean package | cd target"
-                sh "ls -al"           
+                sh "mvn clean package"
+                sh "cd target && ls -al"           
             }
         }
     }
