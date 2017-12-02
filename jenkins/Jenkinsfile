@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'maven:3,3,3' } 
+    agent { docker { image 'maven:3.3.3' } 
           }
     stages {
 	    
@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh "git clone https://github.com/vekatkriish/javaenv.git"
                 sh "cd javaenv"
-                sh "mvn clean package"
+                sh "mvn clean package | cd target"
                 sh "ls -al"           
             }
         }
