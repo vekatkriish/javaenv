@@ -52,11 +52,11 @@ RUN java -version
 RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
     echo "jenkins:jenkins" | chpasswd
 
-RUN mkdir /home/jenkins/.m2
+#RUN mkdir /home/jenkins/.m2
 
-ADD settings.xml /home/jenkins/.m2/
+#ADD settings.xml /home/jenkins/.m2/
 
-RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
+#RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
 #Installing maven
 RUN apt-get -q update &&\
