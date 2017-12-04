@@ -1,7 +1,6 @@
 pipeline {
         agent { dockerfile true }
-        
-    }
+    
     environment{
 
         CC = 'clang'
