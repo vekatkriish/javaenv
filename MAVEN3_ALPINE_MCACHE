@@ -1,19 +1,11 @@
-FROM openjdk:9-jdk-slim
+FROM openjdk:8u121-jdk-alpine
+
+RUN apk add --no-cache curl tar bash
 
 ARG MAVEN_VERSION=3.5.2
 ARG USER_HOME_DIR="/root"
 ARG SHA=707b1f6e390a65bde4af4cdaf2a24d45fc19a6ded00fff02e91626e3e42ceaff
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
-
-RUN apt-get update && \
-    apt-get install -y \
-      curl \
-  && rm -rf /var/lib/apt/lists/*
-
-# Maven fails with 'Can't read cryptographic policy directory: unlimited'
-# because it looks for $JAVA_HOME/conf/security/policy/unlimited but it is in
-# /etc/java-9-openjdk/security/policy/unlimited
-RUN ln -s /etc/java-9-openjdk /usr/lib/jvm/java-9-openjdk-$(dpkg --print-architecture)/conf
 
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
@@ -29,6 +21,7 @@ COPY mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
 COPY settings-docker.xml /usr/share/maven/ref/
 
 VOLUME "$USER_HOME_DIR/.m2"
+RUN -v $HOME/.m2:/root/.m2
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 CMD ["mvn"]
