@@ -2,7 +2,7 @@ pipeline {
         agent {
     dockerfile {
 
-       args  '-v /home/udevops/.m2:/root/.m2'
+       args  '--name=.m2 -v /home/udevops/.m2:/root/.m2'
     }
 }
     
