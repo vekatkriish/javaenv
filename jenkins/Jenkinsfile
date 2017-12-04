@@ -1,13 +1,23 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } 
-          }
+    agent { 
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
+    environment{
+
+        CC = 'clang'
+
+    }
     stages {
 	    
         stage('build') {
             steps {
                git url: 'https://github.com/vekatkriish/javaenv.git'
                 sh "mvn clean package"
-                sh "cd target && ls -al"           
+                sh "cd target && ls -al"  
+                sh "echo $CC"
             }
         }
     }
