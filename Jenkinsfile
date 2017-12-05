@@ -8,6 +8,7 @@
     environment{
 
         CC = 'clang'
+        id=BUILD_ID
 
     }
     stages {
@@ -18,6 +19,7 @@
                 sh "mvn clean package"
                 sh "cd target && ls -al"  
                 sh "echo $CC"
+                sh "echo id"
             }
         }
     }
