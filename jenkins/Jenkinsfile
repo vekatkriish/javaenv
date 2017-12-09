@@ -9,7 +9,7 @@
 	    
         stage('build') {
             steps {
-               git url: 'https://github.com/vekatkriish/javaenv.git'
+               git url: 'https://github.com/jagathkriish/Java_Devops.git'
                 sh "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
                    -Dsonar.host.url=https://sonarcloud.io \
                    -Dsonar.organization=jagathkriish-github \
