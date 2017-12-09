@@ -1,13 +1,15 @@
         pipeline {
-    agent {
-	environment{
 	
-	            build_number = $BUILD_NUMBER
-	}
+    agent {
+	
         dockerfile {
             args '-v $HOME/.m2:/root/.m2'
         }
     }
+    environment{
+	
+	            build_number = $BUILD_NUMBER
+	}
     
     stages {
 	    
