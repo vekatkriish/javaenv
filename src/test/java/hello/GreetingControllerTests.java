@@ -35,6 +35,11 @@ public class GreetingControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
+    
+    @Test
+    public void testMain() {
+    	Application.main(new String[] {});
+    }
 
     @Test
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
