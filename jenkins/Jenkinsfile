@@ -8,7 +8,7 @@
     }
     environment{
 	
-	            build_number = $BUILD_NUMBER
+	            build_number = ${env.BUILD_NUMBER}
 	}
     
     stages {
@@ -21,7 +21,7 @@
                    -Dsonar.organization=vekatkriish-github \
                    -Dsonar.login=2a09b4d0059d6fa5ccb060e560199c80deb7b68a"
                 sh "cd target && ls -al"
-		sh "echo env.build_number"
+		sh "echo build_number"
             }
         }
     }
