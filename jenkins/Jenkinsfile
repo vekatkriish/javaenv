@@ -6,10 +6,6 @@
             args '-v $HOME/.m2:/root/.m2'
         }
     }
-    environment{
-	
-	            build_number = ${env.BUILD_NUMBER}
-	}
     
     stages {
 	    
@@ -21,8 +17,7 @@
                    -Dsonar.organization=vekatkriish-github \
                    -Dsonar.login=2a09b4d0059d6fa5ccb060e560199c80deb7b68a"
                 sh "cd target && ls -al"
-		sh "echo build_number"
-            }
+		            }
         }
     }
 }
