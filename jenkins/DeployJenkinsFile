@@ -1,0 +1,22 @@
+pipeline {
+	
+    agent {
+	
+        dockerfile {
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
+    
+    stages {
+	    
+    	stage('deploy') {
+            echo 'Hello World'
+   	    echo params.build_no
+	    echo params.env
+	    if (params.skiptests) {
+	       echo "true: $skiptests"
+	    }
+	    else echo "false: $skiptests"
+	}	
+    }
+}
