@@ -11,12 +11,12 @@ pipeline {
 	    
     	stage('deploy') {
             echo 'Hello World'
-   	    echo params.build_no
-	    echo params.env
-	    if (params.skiptests) {
-	       echo "true: $skiptests"
-	    }
-	    else echo "false: $skiptests"
-	}	
+            echo params.build_no
+            echo params.env
+            if (params.skiptests) {
+            echo "true: $skiptests"
+            }
+            else echo "false: $skiptests"
+	    }	
     }
 }
