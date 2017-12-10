@@ -1,4 +1,4 @@
-        pipeline {
+pipeline {
 	
     agent {
 	
@@ -17,16 +17,18 @@
                    -Dsonar.organization=vekatkriish-github \
                    -Dsonar.login=2a09b4d0059d6fa5ccb060e560199c80deb7b68a"
                 sh "cd target && ls -al"
-		}
+		    }
         }
 	
-	stage ('Starting ART job') {
-    		build job: 'deploy', 
-    		parameters: [ 
-			string(name: 'build_no', value: env.BUILD_NUMBER),
-        		string(name: 'env', value: "dev"),
-        		[$class: 'BooleanParameterValue', name: 'skiptests', value: false]
-    		]
+        stage ('Starting ART job') {
+            steps{
+                build job: 'deploy', 
+                parameters: [ 
+                string(name: 'build_no', value: env.BUILD_NUMBER),
+                    string(name: 'env', value: "dev"),
+                    [$class: 'BooleanParameterValue', name: 'skiptests', value: false]
+                ]
+            }
+        }
     }
 }
-        }
