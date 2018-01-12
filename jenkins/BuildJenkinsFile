@@ -32,7 +32,7 @@ pipeline {
         }
         post {
         	success {
-            mail to: venkat.kristipati@gmail.com, subject: 'The Pipeline build is sucessful with build no: (${env.BUILD_NUMBER} ) and build url: ($env.BUILD_URL) ' 
+            mail to: venkat.kristipati@gmail.com, subject: 'The Pipeline build is sucessful'
         }
         }
     }
