@@ -30,10 +30,6 @@ pipeline {
                 ]
             }
         }
-        post {
-        	success {
-            mail to: venkat.kristipati@gmail.com, subject: 'The Pipeline build is sucessful'
-        }
-        }
+        
     }
 }
