@@ -27,6 +27,7 @@ pipeline {
                 string(name: 'build_no', value: env.BUILD_NUMBER),
                     string(name: 'env', value: "dev"),
                     [$class: 'BooleanParameterValue', name: 'skiptests', value: false]
+                sh $(env.BUILD_NUMBER)
                 ]
             }
         }
