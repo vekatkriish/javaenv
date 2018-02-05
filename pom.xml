@@ -15,7 +15,15 @@
 		<url>https://github.com/vekatkriish/javaenv.git</url>
 		<connection>scm:git:https://github.com/vekatkriish/javaenv.git</connection>
 	  <tag>javavenv-0.1.0</tag>
-  </scm>
+    </scm>
+    
+    <distributionManagement>
+		<repository>
+			<id>localdeploy</id>
+			<!-- http://localhost:8081/repository/<repository-name> -->
+			<url>file:///home/udevops/Desktop/releases</url>
+		</repository>
+    </distributionManagement>
 
 	<dependencies>
 		<dependency>
