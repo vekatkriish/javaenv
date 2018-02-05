@@ -15,7 +15,6 @@
 	<scm>
 		<url>https://github.com/vekatkriish/javaenv.git</url>
 		<connection>scm:git:https://github.com/vekatkriish/javaenv.git</connection>
-      	<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
