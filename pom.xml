@@ -4,7 +4,7 @@
 	<packaging>jar</packaging>
 	<groupId>DevopsWithJava</groupId>
 	<artifactId>javavenv</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -14,7 +14,8 @@
 	<scm>
 		<url>https://github.com/vekatkriish/javaenv.git</url>
 		<connection>scm:git:https://github.com/vekatkriish/javaenv.git</connection>
-    </scm>
+      <tag>javavenv-0.0.1</tag>
+  </scm>
 
     <distributionManagement>
     <repository>
