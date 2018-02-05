@@ -14,7 +14,7 @@
 	<scm>
 		<url>https://github.com/vekatkriish/javaenv.git</url>
 		<connection>scm:git:https://github.com/vekatkriish/javaenv.git</connection>
-	  <tag>javavenv-0.1.0</tag>
+	  	<tag>javavenv-0.1.0</tag>
     </scm>
     
     <distributionManagement>
