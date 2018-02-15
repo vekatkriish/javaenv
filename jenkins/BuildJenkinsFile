@@ -19,6 +19,22 @@ pipeline {
                 sh "cd target && ls -al"
 		    }
         }
+		
+		stage('build') {
+            steps {
+               script{
+               	  def server = Artifactory.server 'jfrogLocal'
+               	  def uploadSpec = """{
+					 "files": [
+					  {
+					      "pattern": "target/*.jar",
+					      "target": "libs-snapshot/"
+					    }
+					 ]
+				   }""
+               }
+		    }
+        }
 	
         stage ('Starting ART job') {
             steps{
