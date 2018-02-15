@@ -20,7 +20,7 @@ pipeline {
 		    }
         }
 		
-		stage('build') {
+		stage('upload to artifactory') {
             steps {
                script{
                	  def server = Artifactory.server 'jfrogLocal'
@@ -31,7 +31,8 @@ pipeline {
 					      "target": "libs-snapshot/"
 					    }
 					 ]
-				   }""
+				   }"""
+				   server.upload(uploadSpec)
                }
 		    }
         }
